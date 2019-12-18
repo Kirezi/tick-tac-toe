@@ -3,28 +3,31 @@
     <nb-card accent="info">
       <nb-card-header>Welcome to the tic tac toe game</nb-card-header>
       <nb-card-body>
-        <img src="../../assets/images/tic-tac-toe.png" class="logo">
+        <img src="../../assets/images/tic-tac-toe.png" class="logo" />
         <h6>This game involves two players</h6>
         <label> Player X and Player O</label>
-        <p>once you done playing,
-          pass the mouse to the second player. All the best!</p>
+        <p>
+          once you done playing, pass the mouse to the second player. All the
+          best!
+        </p>
       </nb-card-body>
       <nb-card-footer>
-        <button (click)="newGame()" nbButton outline status="danger">Start new Game</button>
+        <button (click)="newGame()" nbButton outline status="danger">
+          Start new Game
+        </button>
       </nb-card-footer>
     </nb-card>
-
   </div>
 
-
-  <h2 *ngIf="winner">
-    Player {{winner}} won the game !
-  </h2>
+  <h2 *ngIf="winner">Player {{ winner }} won the game !</h2>
   <div *ngIf="startGame">
-    <h3 class="text-center"> Player {{player}} your turn</h3>
+    <h3 class="text-center">Player {{ player }} your turn</h3>
     <main>
-
-      <app-square *ngFor="let square of squares; let i  = index" [value]="square" (click)="makeMove(i, dialog)">
+      <app-square
+        *ngFor="let square of squares; let i = index"
+        [value]="square"
+        (click)="makeMove(i, dialog)"
+      >
       </app-square>
     </main>
   </div>
@@ -39,6 +42,5 @@
         <button nbButton (click)="restartGame(ref)">Restart the game</button>
       </nb-card-footer>
     </nb-card>
-
   </ng-template>
 </div>

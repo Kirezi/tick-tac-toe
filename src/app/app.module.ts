@@ -14,6 +14,8 @@ import {
   NbCardModule
 } from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, BoardComponent, SquareComponent],
@@ -26,7 +28,8 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
     NbEvaIconsModule,
     NbButtonModule,
     NbDialogModule.forRoot(),
-    NbCardModule
+    NbCardModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

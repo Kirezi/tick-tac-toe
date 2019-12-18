@@ -1,5 +1,9 @@
 {
   "name": "tick-tac-toe",
+  "author": {
+    "name": "Patrick",
+    "email": "kizpatrick005@gmail.com"
+  },
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -19,7 +23,9 @@
     "@angular/forms": "~8.2.14",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
+    "@angular/pwa": "^0.803.20",
     "@angular/router": "~8.2.14",
+    "@angular/service-worker": "~8.2.14",
     "@nebular/eva-icons": "4.6.0",
     "@nebular/theme": "^4.6.0",
     "eva-icons": "^1.1.2",

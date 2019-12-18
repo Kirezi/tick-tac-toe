@@ -82,10 +82,12 @@ export class BoardComponent implements OnInit {
     }
 
     if (this.checkDraw()) {
-      this.dialogService.open(dialog, {
-        context: "It's a draw ",
-        closeOnBackdropClick: false
-      });
+      if (!this.calculateWinner()) {
+        this.dialogService.open(dialog, {
+          context: "It's a draw ",
+          closeOnBackdropClick: false
+        });
+      }
     }
   }
 

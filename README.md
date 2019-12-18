@@ -2,7 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
-#GAME IS ACCESSIBLE ON THE FOLLOWING LINL
+#GAME IS ACCESSIBLE ON THE FOLLOWING LINK:
+
 https://tic-tac-toe-game-98536.firebaseapp.com/
 
 ## Development server

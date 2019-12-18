@@ -29,11 +29,12 @@
     "@angular/service-worker": "~8.2.14",
     "@nebular/eva-icons": "4.6.0",
     "@nebular/theme": "^4.6.0",
+    "bootstrap": "^4.4.1",
     "eva-icons": "^1.1.2",
+    "firebase": ">= 5.5.7 <8",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "firebase": ">= 5.5.7 <8"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.20",

@@ -1,9 +1,10 @@
 <div class="container">
+
   <div *ngIf="!startGame" class="intro-card">
     <nb-card accent="info">
       <nb-card-header>Welcome to the Tic Tac Toe game</nb-card-header>
       <nb-card-body>
-        <img src="../../assets/images/tic-tac-toe.png" class="logo" />
+        <img src="../../assets/images/tic-tac-toe.png" class="mb-3" />
         <h6>This game involves two players</h6>
         <label> Player X and Player O</label>
         <p>
@@ -19,14 +20,19 @@
     </nb-card>
   </div>
 
+
+
   <h2 *ngIf="winner">Player {{ winner }} won the game !</h2>
   <div *ngIf="startGame">
+
     <h3 class="text-center">Player {{ player }} your turn</h3>
     <main>
       <app-square *ngFor="let square of squares; let i = index" [value]="square" (click)="makeMove(i, dialog)">
       </app-square>
     </main>
   </div>
+
+
 
   <ng-template #dialog let-data let-ref="dialogRef">
     <nb-card>

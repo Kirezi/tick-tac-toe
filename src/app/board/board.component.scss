@@ -5,20 +5,40 @@ main {
   justify-content: center;
 }
 
+@media screen and (max-width: 450px) {
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    justify-content: center;
+  }
+
+
+}
+
 app-square {
   border: 1px gray solid;
   height: 200px;
 }
 
+@media screen and (max-width: 450px) {
+  app-square {
+    border: 1px gray solid;
+    height: 130px;
+  }
+
+}
+
+
 .intro-card {
   display: flex;
   justify-content: center;
   position: relative;
-  top: 20%;
-
-  nb-card {
-    width: 50%;
-  }
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 button {

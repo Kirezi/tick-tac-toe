@@ -8,10 +8,24 @@
     Player {{winner}} won the game !
   </h2>
   <div *ngIf="startGame">
-    <h3 class="text-center"> The current Player is {{player}}</h3>
+    <h3 class="text-center"> Player {{player}} play</h3>
     <main>
 
-      <app-square *ngFor="let square of squares; let i  = index" [value]="square" (click)="makeMove(i)"></app-square>
+      <app-square *ngFor="let square of squares; let i  = index" [value]="square" (click)="makeMove(i, dialog)">
+      </app-square>
     </main>
   </div>
+
+  <ng-template #dialog let-data let-ref="dialogRef">
+    <nb-card>
+      <nb-card-header class="text-center">Won!!</nb-card-header>
+      <nb-card-body class="text-center">
+        <h4>{{ data }}</h4>
+      </nb-card-body>
+      <nb-card-footer class="text-center">
+        <button nbButton (click)="restartGame(ref)">Restart the game</button>
+      </nb-card-footer>
+    </nb-card>
+
+  </ng-template>
 </div>

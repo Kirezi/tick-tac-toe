@@ -6,7 +6,13 @@ import { AppComponent } from "./app.component";
 import { BoardComponent } from "./board/board.component";
 import { SquareComponent } from "./square/square.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NbThemeModule, NbLayoutModule, NbButtonModule } from "@nebular/theme";
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbButtonModule,
+  NbDialogModule,
+  NbCardModule
+} from "@nebular/theme";
 import { NbEvaIconsModule } from "@nebular/eva-icons";
 
 @NgModule({
@@ -18,7 +24,9 @@ import { NbEvaIconsModule } from "@nebular/eva-icons";
     NbThemeModule.forRoot({ name: "cosmic" }),
     NbLayoutModule,
     NbEvaIconsModule,
-    NbButtonModule
+    NbButtonModule,
+    NbDialogModule.forRoot(),
+    NbCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

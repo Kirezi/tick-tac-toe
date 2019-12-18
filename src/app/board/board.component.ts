@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-
+import { Component, OnInit, TemplateRef } from "@angular/core";
+import { NbDialogService } from "@nebular/theme";
 @Component({
   selector: "app-board",
   templateUrl: "./board.component.html",
@@ -11,7 +11,7 @@ export class BoardComponent implements OnInit {
   winner: string;
   startGame: boolean;
 
-  constructor() {}
+  constructor(private dialogService: NbDialogService) {}
 
   ngOnInit() {
     this.startGame = false;
@@ -24,14 +24,30 @@ export class BoardComponent implements OnInit {
     this.startGame = true;
   }
 
+  restartGame(dialogRef) {
+    this.squares = new Array(9).fill(null);
+    this.winner = null;
+    this.xisNext = true;
+    this.startGame = true;
+    dialogRef.close();
+  }
+
   get player() {
     return this.xisNext ? "X" : "O";
   }
 
-  makeMove(index: number) {
+  makeMove(index: number, dialog: TemplateRef<any>) {
     if (!this.squares[index]) {
       this.squares.splice(index, 1, this.player);
       this.xisNext = !this.xisNext;
+    }
+
+    if (this.calculateWinner()) {
+      this.winner = this.calculateWinner();
+      this.dialogService.open(dialog, {
+        context: "Player " + this.winner + " won the game",
+        closeOnBackdropClick: false
+      });
     }
   }
 

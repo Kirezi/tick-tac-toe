@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class SquareComponent implements OnInit {
   @Input() value: "X" | "O";
+  /**
+   * this is a dummy component that represent the squares
+   */
   constructor() {}
 
   ngOnInit() {}
